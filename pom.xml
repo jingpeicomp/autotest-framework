@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.7.RELEASE</version>
+    </parent>
+
+    <artifactId>autotest-parent</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
+    <description>UI自动化测试框架，支持APP、Web、HTML5三端</description>
+
+    <modules>
+        <module>autotest-app</module>
+        <module>autotest-html5</module>
+        <module>autotest-base</module>
+        <module>autotest-appium</module>
+        <module>autotest-web</module>
+        <module>autotest-demo</module>
+    </modules>
+    <properties>
+        <java.version>1.8</java.version>
+        <selenium.version>3.12.0</selenium.version>
+        <appium.version>6.1.0</appium.version>
+        <lombok.version>1.16.10</lombok.version>
+        <testng.version>6.14.3</testng.version>
+        <reflections.version>0.9.11</reflections.version>
+        <common.lang3.version>3.7</common.lang3.version>
+        <collections.version>4.2</collections.version>
+        <common.io.version>2.6</common.io.version>
+        <git.url>git@git.dev.qianmi.com:tda/qianmi-autotest.git</git.url>
+    </properties>
+
+    <scm>
+        <connection>scm:git:${git.url}</connection>
+        <developerConnection>scm:git:${git.url}</developerConnection>
+        <url>${git.url}</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>${selenium.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>${reflections.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.appium</groupId>
+                <artifactId>java-client</artifactId>
+                <version>${appium.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${common.lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${collections.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${common.io.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <username>${git.username}</username>
+                    <password>${git.password}</password>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
