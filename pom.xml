@@ -33,7 +33,7 @@
         <common.lang3.version>3.7</common.lang3.version>
         <collections.version>4.2</collections.version>
         <common.io.version>2.6</common.io.version>
-        <git.url>git@git.dev.qianmi.com:tda/qianmi-autotest.git</git.url>
+        <git.url>git@github.com:jingpeicomp/autotest-framework.git</git.url>
     </properties>
 
     <scm>
