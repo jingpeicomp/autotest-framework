@@ -189,10 +189,11 @@ Page Object 对象是指 UI 界面上用于与用户进行交互的对象，一�
 
 * [APP demo](/autotest-demo/autotest-demo-app) 执行过程录屏如下：
 
-![APP demo 执行过程](http://ww1.sinaimg.cn/large/44608603gy1fzhmojmyk9g20680dcx73.gif)
+
+![APP demo 执行过程](http://ww1.sinaimg.cn/mw690/44608603gy1fzhwrwjx4wg2047090u10.gif)
 
 ---
 
 * [HTML5 demo](/autotest-demo/autotest-demo-html5) 执行过程录屏如下：
 
-![HTML5 demo 执行过程](http://ww1.sinaimg.cn/large/44608603gy1fzhmsvnbe7g20680dc4qu.gif)
+![HTML5 demo 执行过程](http://ww1.sinaimg.cn/mw690/44608603gy1fzhwmu36iqg20680dce84.gif)
