@@ -28,7 +28,7 @@ Autotest Framework 有如下特性：
 
 ### APP 测试框架的逻辑视图
 
-![APP 测试框架逻辑视图](http://gitbook.dev.qianmi.com/book/qianmi-autotest/book/resource/framework-logic1.png)
+![APP 测试框架逻辑视图](http://ww1.sinaimg.cn/large/44608603gy1fzhfsb86yij20qw0g5aam.jpg)
 
 测试程序主要分为三层：
 
