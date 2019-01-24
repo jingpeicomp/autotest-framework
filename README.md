@@ -28,7 +28,7 @@ Autotest Framework 有如下特性：
 
 ### APP 测试框架的逻辑视图
 
-![APP 测试框架逻辑视图](http://ww1.sinaimg.cn/large/44608603gy1fzhfsb86yij20qw0g5aam.jpg)
+![APP 测试框架逻辑视图](http://ww1.sinaimg.cn/large/44608603gy1fzhgmxlgl6j20qw0g5aam.jpg)
 
 测试程序主要分为三层：
 
@@ -53,9 +53,36 @@ Autotest Framework 有如下特性：
     <dependency>
         <groupId>com.qianmi</groupId>
         <artifactId>autotest-app</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>2.0.0-SNAPSHOT</version>
     </dependency>
 </dependencies>
+```
+
+再配置一个 SpringBoot 的 Maven 打包插件，mainClass 属性配置为对应框架的启动类。
+
+* APP 的启动类为：**`com.qianmi.autotest.app.AppTestApplication`**
+* HTML5 的启动类为：**`com.qianmi.autotest.html5.Html5TestApplication`**
+* Web 的启动类为：**`com.qianmi.autotest.web.WebTestApplication`**
+
+```xml
+<build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.qianmi.autotest.app.AppTestApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 ```
 
 ### 2.配置文件
@@ -130,10 +157,42 @@ Page Object 对象是指 UI 界面上用于与用户进行交互的对象，一�
 
 1. 测试用例类的命名为 XxxTest
 2. 测试用例类必须继承对应框架的 PageTest 类
-3. 测试用户中的每个方法对应一个一个测试功能，方法上面加上`@Test`注解，注解的 priority 属性对于测试功能的执行优先级，priority 越小越先执行，priority 相同按照定义的先后执行
+3. 测试用户中的每个方法对应一个一个测试功能，方法上面加上 `@Test` 注解，注解的 priority 属性对于测试功能的执行优先级，priority 越小越先执行，priority 相同按照定义的先后执行
 
 ## 执行
 
 编码完成后，使用 Maven 打包，执行 `java -jar` 命令执行即可，文件会输出测试报告，失败的话会截屏，并且支持消息通知、重试等功能。
 
-[autotest-demo](/autotest-demo) 目录下是三个测试 Demo ，分别是 APP 、 HTML5 、 Web 自动化测试。
+如果不使用 Appium Server Mng  而在本地执行的话，需要安装 Appium ， 安装教程见：[http://appium.io/docs/en/about-appium/getting-started](http://appium.io/docs/en/about-appium/getting-started)。
+
+### 执行 Demo
+
+[autotest-demo](/autotest-demo) 目录下是三个模块 ，分别是 APP 、 HTML5 、 Web 自动化测试示例。
+
+以运行autotest-demo-web为例：
+
+```shell
+  $ cd  {project_home}
+  $ git clone git@github.com:jingpeicomp/autotest-framework.git
+  $ cd autotest-framework
+  $ mvn clean package -Dmaven.test.skip=true
+  $ cd autotest-demo/autotest-demo-web/target
+  $ chmod a+x autotest-demo-web-2.0.0-SNAPSHOT.jar
+  $ java -jar autotest-demo-web-2.0.0-SNAPSHOT.jar
+```
+
+执行完成后，报告位于 `test-output/custom-test-report.html` （可以自定义路径），报告的格式如下：
+
+![Web 执行报告](http://ww1.sinaimg.cn/mw690/44608603gy1fzhn5o5gd4j21se14eajp.jpg)
+
+---
+
+* [APP demo](/autotest-demo/autotest-demo-app) 执行过程录屏如下：
+
+![APP demo 执行过程](http://ww1.sinaimg.cn/large/44608603gy1fzhmojmyk9g20680dcx73.gif)
+
+---
+
+* [HTML5 demo](/autotest-demo/autotest-demo-html5) 执行过程录屏如下：
+
+![HTML5 demo 执行过程](http://ww1.sinaimg.cn/large/44608603gy1fzhmsvnbe7g20680dc4qu.gif)

@@ -2,10 +2,10 @@ package com.qianmi.autotest.web.common;
 
 import com.qianmi.autotest.base.common.AutotestProperties;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.MapUtils;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 import java.util.Properties;
 
@@ -13,9 +13,9 @@ import java.util.Properties;
  * Web 测试程序配置参数
  * Created by liuzhaoming on 2016/12/6.
  */
-@ConfigurationProperties
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @Data
-@Component
 @Slf4j
 public class WebAutotestProperties extends AutotestProperties {
     /**
@@ -106,7 +106,6 @@ public class WebAutotestProperties extends AutotestProperties {
                 }
             }
         }
-
 
         return driverConfig;
     }

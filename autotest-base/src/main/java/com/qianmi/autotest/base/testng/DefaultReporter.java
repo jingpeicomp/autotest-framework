@@ -670,7 +670,7 @@ public class DefaultReporter implements IReporter {
                 List<ITestResult> resultsPerMethod = Lists.newArrayList();
 
                 List<ITestResult> resultsList = Lists.newArrayList(results);
-                Collections.sort(resultsList, RESULT_COMPARATOR);
+                resultsList.sort(RESULT_COMPARATOR);
                 Iterator<ITestResult> resultsIterator = resultsList.iterator();
                 assert resultsIterator.hasNext();
 

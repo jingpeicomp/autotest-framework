@@ -1,6 +1,7 @@
 package com.qianmi.autotest.web;
 
 import com.qianmi.autotest.base.AbstractTestApplication;
+import com.qianmi.autotest.base.testng.DefaultReporter;
 import com.qianmi.autotest.base.testng.QmDingNotifier;
 import com.qianmi.autotest.base.testng.TestRetryListener;
 import com.qianmi.autotest.web.testng.ScreenShotListener;
@@ -30,6 +31,7 @@ public class WebTestApplication extends AbstractTestApplication {
     @Override
     protected List<ITestNGListener> getListeners() {
         List<ITestNGListener> listeners = new ArrayList<>();
+        listeners.add(new DefaultReporter());
 
         if (Boolean.valueOf(System.getProperty("screenshot"))) {
             listeners.add(new ScreenShotListener());
