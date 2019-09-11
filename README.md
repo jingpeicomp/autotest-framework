@@ -28,7 +28,7 @@ Autotest Framework 有如下特性：
 
 ### APP 测试框架的逻辑视图
 
-![APP 测试框架逻辑视图](http://ww1.sinaimg.cn/large/44608603gy1fzhgmxlgl6j20qw0g5aam.jpg)
+![APP 测试框架逻辑视图](https://s2.ax1x.com/2019/09/11/nwC234.jpg)
 
 测试程序主要分为三层：
 
@@ -40,7 +40,7 @@ Autotest Framework 有如下特性：
 
 ### APP 测试框架模块视图
 
-![APP 测试框架模块视图](http://ww1.sinaimg.cn/large/44608603gy1fzgrd7kzh6j20pp0gg0ti.jpg)
+![APP 测试框架模块视图](https://s2.ax1x.com/2019/09/11/nwCWv9.jpg)
 
 ## 开发指南
 
@@ -183,17 +183,17 @@ Page Object 对象是指 UI 界面上用于与用户进行交互的对象，一�
 
 执行完成后，报告位于 `test-output/custom-test-report.html` （可以自定义路径），报告的格式如下：
 
-![Web 执行报告](http://ww1.sinaimg.cn/mw690/44608603gy1fzhn5o5gd4j21se14eajp.jpg)
+![Web 执行报告](https://s2.ax1x.com/2019/09/11/nwC4D1.jpg)
 
 ---
 
 * [APP demo](/autotest-demo/autotest-demo-app) 执行过程录屏如下：
 
 
-![APP demo 执行过程](http://ww1.sinaimg.cn/mw690/44608603gy1fzhwrwjx4wg2047090u10.gif)
+![APP demo 执行过程](https://s2.ax1x.com/2019/09/11/nwC5Hx.gif)
 
 ---
 
 * [HTML5 demo](/autotest-demo/autotest-demo-html5) 执行过程录屏如下：
 
-![HTML5 demo 执行过程](http://ww1.sinaimg.cn/mw690/44608603gy1fzhwmu36iqg20680dce84.gif)
+![HTML5 demo 执行过程](https://s2.ax1x.com/2019/09/11/nwC74O.gif)
